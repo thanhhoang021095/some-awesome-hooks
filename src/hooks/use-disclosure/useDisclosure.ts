@@ -17,7 +17,7 @@ type HTMLProps = React.HTMLAttributes<HTMLElement>
  *
  * @see Docs https://chakra-ui.com/docs/hooks/use-disclosure
  */
-export function useDisclosure(props: UseDisclosureProps = {}) {
+export const useDisclosure = (props: UseDisclosureProps = {}) => {
     const {
         onClose: onCloseProp,
         onOpen: onOpenProp,

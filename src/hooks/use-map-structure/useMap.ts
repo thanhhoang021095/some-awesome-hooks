@@ -13,9 +13,9 @@ export interface Actions<K, V> {
 // We hide some setters from the returned map to disable autocompletion
 type Return<K, V> = [Omit<Map<K, V>, 'set' | 'clear' | 'delete'>, Actions<K, V>]
 
-export function useMap<K, V>(
+export const useMap = <K, V>(
     initialState: MapOrEntries<K, V> = new Map(),
-): Return<K, V> {
+): Return<K, V> => {
     const [map, setMap] = useState(new Map(initialState))
 
     const actions: Actions<K, V> = {
@@ -25,7 +25,7 @@ export function useMap<K, V>(
                 copy.set(key, value)
                 return copy
             })
-            
+
         }, []),
 
         setAll: useCallback(entries => {

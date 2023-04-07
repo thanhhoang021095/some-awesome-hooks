@@ -1,9 +1,9 @@
 import { useEffect, useRef } from "react"
 
-export function useUpdateEffect(
+export const useUpdateEffect = (
     callback: React.EffectCallback,
     deps: React.DependencyList,
-) {
+) => {
     const renderCycleRef = useRef(false)
     const effectCycleRef = useRef(false)
 

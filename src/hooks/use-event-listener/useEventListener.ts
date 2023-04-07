@@ -10,18 +10,21 @@ export function useEventListener<K extends keyof DocumentEventMap>(
     handler?: (event: DocumentEventMap[K]) => void,
     options?: Options,
 ): VoidFunction
+
 export function useEventListener<K extends keyof WindowEventMap>(
     target: Target,
     event: K,
     handler?: (event: WindowEventMap[K]) => void,
     options?: Options,
 ): VoidFunction
+
 export function useEventListener<K extends keyof GlobalEventHandlersEventMap>(
     target: Target,
     event: K,
     handler?: (event: GlobalEventHandlersEventMap[K]) => void,
     options?: Options,
 ): VoidFunction
+
 export function useEventListener(
     target: Target,
     event: string,

@@ -6,7 +6,7 @@ import { useCallbackRef } from "../use-callback-ref/useCallbackRef"
  *
  * @see Docs https://chakra-ui.com/docs/hooks/use-controllable#usecontrollableprop
  */
-export function useControllableProp<T>(prop: T | undefined, state: T) {
+export const useControllableProp = <T>(prop: T | undefined, state: T) => {
     const controlled = typeof prop !== "undefined"
     const value = controlled ? prop : state
     return useMemo<[boolean, T]>(() => [controlled, value], [controlled, value])
@@ -24,7 +24,7 @@ export interface UseControllableStateProps<T> {
  *
  * @see Docs https://chakra-ui.com/docs/hooks/use-controllable#usecontrollablestate
  */
-export function useControllableState<T>(props: UseControllableStateProps<T>) {
+export const useControllableState = <T>(props: UseControllableStateProps<T>) => {
     const {
         value: valueProp,
         defaultValue,

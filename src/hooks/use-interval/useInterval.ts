@@ -7,7 +7,7 @@ import { useCallbackRef } from "../use-callback-ref/useCallbackRef"
  * @param callback the callback to execute at interval
  * @param delay the `setInterval` delay (in ms)
  */
-export function useInterval(callback: () => void, delay: number | null) {
+export const useInterval = (callback: () => void, delay: number | null) => {
   const fn = useCallbackRef(callback)
 
   useEffect(() => {

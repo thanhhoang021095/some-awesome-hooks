@@ -20,7 +20,7 @@ export interface UseOutsideClickProps {
  * Example, used in components like Dialogs and Popovers, so they can close
  * when a user clicks outside them.
  */
-export function useOutsideClick(props: UseOutsideClickProps) {
+export const useOutsideClick = (props: UseOutsideClickProps) => {
     const { ref, handler, enabled = true } = props
     const savedHandler = useCallbackRef(handler)
 
